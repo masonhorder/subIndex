@@ -1,15 +1,17 @@
+def repeatCheck(a, returnList):
+    # print(returnList)
+    for b in a:
+        if type(b) == list:
+            repeatCheck(b,returnList)
+        else:
+            returnList.append(b)
+    return returnList
+
 def subListConvert(a):
     returnList = []
 
-    def repeatCheck(a):
-        for b in a:
-            if type(b) == list:
-                repeatCheck(b)
-            else:
-                returnList.append(b)
-
     if type(a) == list:
-        repeatCheck(a)
+        repeatCheck(a,returnList)
     else:
         returnList.append(a)            
 
